@@ -1,3 +1,7 @@
+/**
+ * Game handler
+ * Use --debug for sample game board.
+ */
 import * as Ants from './ants';
 import {AntColony, AntGame, Hive} from './game';
 import {play, showMapOf} from './ui';
