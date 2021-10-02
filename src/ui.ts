@@ -1,3 +1,7 @@
+/**
+ * UI class
+ */
+
 import {AntGame, AntColony, Place, Hive} from './game';
 import {Ant, EaterAnt, GuardAnt} from './ants';
 
@@ -100,7 +104,11 @@ function iconFor(ant:Ant){
   return icon;
 }
 
-
+/**
+ * [Vorpal](https://github.com/dthree/vorpal) Uses Vorpal as the dymaic making of the game board.
+ * @param game current game
+ * @event test
+ */
 export function play(game:AntGame) {
   Vorpal
     .delimiter(chalk.green('AvB $'))
@@ -115,7 +123,8 @@ export function play(game:AntGame) {
     });
 
   Vorpal
-    .command('deploy <antType> <tunnel>', 'Deploys an ant to tunnel (as "row,col" eg. "0,6").')
+    .command('deploy <antType> <tunnel>', 'Deploys an ant to tunnel (as "row,col" eg. "0,6").\n\
+    antType: Grower, Thrower, Eater, Scuba, Guard')
     .alias('add', 'd')
     .autocomplete(['Grower','Thrower','Eater','Scuba','Guard'])
     .action(function(args, callback) {
